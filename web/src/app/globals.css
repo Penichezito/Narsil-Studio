@@ -1,0 +1,48 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-void: #080808;
+  --color-cyan: #00f0ff;
+  --color-amber: #ff9f1c;
+  --font-mono: var(--font-jetbrains-mono), ui-monospace, monospace;
+}
+
+html,
+body {
+  background: #080808;
+  color: #e5e5e5;
+  font-family: var(--font-mono);
+}
+
+::selection {
+  background: #00f0ff33;
+}
+
+/* Custom range slider: thin track, square cyan thumb. */
+input[type="range"].hud-range {
+  appearance: none;
+  background: transparent;
+}
+input[type="range"].hud-range::-webkit-slider-runnable-track {
+  height: 1px;
+  background: #ffffff33;
+}
+input[type="range"].hud-range::-moz-range-track {
+  height: 1px;
+  background: #ffffff33;
+}
+input[type="range"].hud-range::-webkit-slider-thumb {
+  appearance: none;
+  width: 10px;
+  height: 10px;
+  margin-top: -4.5px;
+  background: #00f0ff;
+  border: none;
+}
+input[type="range"].hud-range::-moz-range-thumb {
+  width: 10px;
+  height: 10px;
+  background: #00f0ff;
+  border: none;
+  border-radius: 0;
+}

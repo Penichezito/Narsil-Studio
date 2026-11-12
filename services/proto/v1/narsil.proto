@@ -1,0 +1,70 @@
+syntax= "proto3";
+
+package narsil.v1;
+
+option go_package = "github.com/Narsil-Studio/backend/gen/v1;narsilv1";
+
+import "google/api/annotations.proto";
+
+
+// --- Messages ---
+message CreateLeadRequest {
+  string name         = 1;
+  string email        = 2;
+  string company      = 3;
+  string project_type = 4;  // Outsourcing | Tools | Shaders | Others
+  string message      = 5;
+  string locale       = 6;  // "pt" | "en
+  string website      = 7;  // honeypot - if filled, discard.
+}
+
+message CreateLeadResponse {
+  string id = 1;
+}
+
+message SubscribeRequest {
+  string email  = 1;
+  string locale = 2;
+}
+
+message SubscribeResponse {};
+
+message HealthRequest {}
+
+message HealthResponse {
+  string status = 1;
+}
+
+// --- Leads (write side) ---
+service LeadService {
+  rpc CreateLead(CreateLeadRequest) returns (CreateLeadResponse) {
+    option (google.api.http) = {
+      post: "/v1/leads"
+      body: "*"
+    };
+  }
+}
+
+// --- Newsletter (write side) ---
+service NewsletterService {
+  rpc Subscribe(SubscribeRequest) returns (SubscribeResponse) {
+    option (google.api.http) = {
+      post: "/v1/newsletter"
+      body:"*"
+    };
+  }
+}
+
+// --- Health ---
+service HealthService {
+  rpc HealthService(HealthRequest) returns (HealthResponse) {
+    option (google.api.http) = {
+      get: "/v1/health"
+    };
+  }
+}
+
+// --- Assets Catalog (*not implement yet) ---
+
+
+

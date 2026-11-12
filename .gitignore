@@ -1,0 +1,36 @@
+# --- General and Ambient Variables ---
+.env
+.env*.local
+.DS_Store
+Thumbs.db
+
+# --- Go (Back-end) ---
+# Binários e arquivos compilados
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+bin/
+dist/
+tmp/
+
+# Files of test and coverage
+*.test
+*.out
+coverage.txt
+
+# --- Next.js / TypeScript (Front-end) ---
+# Dependences and builds
+node_modules/
+.next/
+out/
+build/
+
+# Logs and cache
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.tsbuildinfo
+next-env.d.ts
