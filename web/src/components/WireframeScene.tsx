@@ -61,6 +61,8 @@ export default function WireframeScene({ mode, speed }: Props) {
     const pointCloud = new THREE.Points(geometry, pointsMaterial);
     group.add(wireMesh, pointCloud);
     scene.add(group);
+    group.position.x = 3.0;
+
 
     // Pointer in normalized [-1, 1]; the scene eases toward it every frame.
     const pointer = { x: 0, y: 0 };
@@ -96,9 +98,9 @@ export default function WireframeScene({ mode, speed }: Props) {
 
       group.rotation.x = spin * 0.6 + eased.y * 0.5;
       group.rotation.y = spin + eased.x * 0.7;
-      camera.position.x = eased.x * 0.4;
+      camera.position.x = eased.x * 2.2;
       camera.position.y = -eased.y * 0.25;
-      camera.lookAt(0, 0, 0);
+      camera.lookAt(group.position.x * 0.5, 0, 0); // test right side
 
       const points = modeRef.current === "points";
       wireMesh.visible = !points;

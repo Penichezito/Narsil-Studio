@@ -48,7 +48,7 @@ export default function MaintenanceScreen({ links }: { links: TerminalLink[] }) 
   const progress = last ? ((last.id % BUILD_STEPS.length) + 1) / BUILD_STEPS.length : 0;
 
   return (
-    <main className="relative flex min-h-screen items-center justify-center p-4 text-[13px] leading-relaxed">
+    <main className="relative isolate flex min-h-screen items-center justify-start p-4 text-[13px] leading-relaxed md:p-15">
       <WireframeScene mode={mode} speed={speed} />
 
       <section
@@ -73,7 +73,7 @@ export default function MaintenanceScreen({ links }: { links: TerminalLink[] }) 
               <span className="relative inline-flex size-2.5 rounded-full bg-amber" />
             </span>
             <span className="text-amber">
-              SYSTEM_STATUS: <span className="font-semibold">DEPLOYING_NEW_BUILD</span>
+              SYSTEM_STATUS: <span className="font-semibold">DEPLOYING NEW BUILD</span>
             </span>
           </div>
 

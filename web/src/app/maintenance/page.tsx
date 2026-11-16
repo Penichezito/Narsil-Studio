@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import MaintenanceScreen, { type TerminalLink } from "@/components/MaintenanceScreen";
 
 export const metadata: Metadata = {
-  title: "Narsil Studio — Building Worlds, Coding Art",
+  title: "Narsil Studio — Building New Worlds, Coding Art",
 };
 
 export default function MaintenancePage() {
