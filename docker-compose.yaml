@@ -29,11 +29,11 @@ services:
     <<: *restart
     build:
       context: ./web
-      args:   # NEXT_PUBLIC_* are inlined at build time (see .env.example)
+      args:   # NEXT_PUBLIC_* are inlined at build time (see .env.local)
         NEXT_PUBLIC_MAINTENANCE_MODE: ${NEXT_PUBLIC_MAINTENANCE_MODE:-true}
-        NEXT_PUBLIC_LINKEDIN_URL: ${NEXT_PUBLIC_LINKEDIN_URL:-}
-        NEXT_PUBLIC_GITHUB_URL: ${NEXT_PUBLIC_GITHUB_URL:-}
-        NEXT_PUBLIC_YOUTUBE_URL: ${NEXT_PUBLIC_YOUTUBE_URL:-}
+        NEXT_PUBLIC_LINKEDIN_URL: ${NEXT_PUBLIC_LINKEDIN_URL:}
+        NEXT_PUBLIC_GITHUB_URL: ${NEXT_PUBLIC_GITHUB_URL:}
+        NEXT_PUBLIC_YOUTUBE_URL: ${NEXT_PUBLIC_YOUTUBE_URL:}
     environment:
       CORE_INTERNAL_URL: http://core:8080
       WP_INTERNAL_URL: http://wordpress
@@ -59,6 +59,7 @@ services:
     <<: *restart
     image: postgres:18-alpine
     environment:
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
       POSTGRES_USER: narsil
       POSTGRES_DB: narsil
     volumes:

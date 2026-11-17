@@ -14,9 +14,9 @@ WORKDIR /app
 # NEXT_PUBLIC_* values are inlined at build time (client bundle AND middleware),
 # so they must be passed as build args: docker build --build-arg NEXT_PUBLIC_...=...
 ARG NEXT_PUBLIC_MAINTENANCE_MODE=true
-ARG NEXT_PUBLIC_LINKEDIN_URL=""
-ARG NEXT_PUBLIC_GITHUB_URL=""
-ARG NEXT_PUBLIC_YOUTUBE_URL=""
+ARG NEXT_PUBLIC_LINKEDIN_URL="https://www.linkedin.com/in/tiago-peniche-software-engineer/"
+ARG NEXT_PUBLIC_GITHUB_URL="https://github.com/Penichezito"
+ARG NEXT_PUBLIC_YOUTUBE_URL="https://www.youtube.com/@NarsilStudio"
 ENV NEXT_PUBLIC_MAINTENANCE_MODE=$NEXT_PUBLIC_MAINTENANCE_MODE \
     NEXT_PUBLIC_LINKEDIN_URL=$NEXT_PUBLIC_LINKEDIN_URL \
     NEXT_PUBLIC_GITHUB_URL=$NEXT_PUBLIC_GITHUB_URL \
