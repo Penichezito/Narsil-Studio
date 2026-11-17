@@ -1,6 +1,8 @@
 # --- General and Ambient Variables ---
 .env
+.env.example
 .env*.local
+.env*.example
 .env*
 .DS_Store
 Thumbs.db
